@@ -24,7 +24,7 @@ where
     // will never succeed since we never return equal ordering
     let swap_with = arr[last_ascending + 1..]
         .binary_search_by(|n| match arr[last_ascending].cmp(n) {
-            Ordering::Equal => Ordering::Less,
+            Ordering::Equal => Ordering::Greater,
             ord => ord,
         })
         .unwrap_err();
