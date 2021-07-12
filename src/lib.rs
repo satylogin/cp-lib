@@ -1,4 +1,3 @@
+pub mod algo;
 pub mod ds;
-pub mod gcd;
-pub mod next_permutation;
-pub mod rand;
+pub mod maths;
