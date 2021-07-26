@@ -30,6 +30,7 @@ impl ModMath for Mod {
         self.mmul(other.minverse())
     }
     fn mpow(&self, mut power: Mod) -> Mod {
+        power %= MOD - 1; // Euler's totient theorem
         let mut base = *self;
         base %= MOD;
         let mut ans: Mod = 1;
