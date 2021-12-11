@@ -21,11 +21,4 @@ jobs:
     - name: Run tests
       run: cargo test --verbose
     - name: Run clippy
-      run: cargo clippy --tests -- -Dclippy::all \
-        -Dclippy::correctness \
-        -Dclippy::suspicious \
-        -Dclippy::style \
-        -Dclippy::complexity \
-        -Dclippy::perf \
-        -Dclippy::nursery \
-        -Dclippy::cargo
+      run: cargo clippy --tests -- -Dclippy::all -Dclippy::correctness -Dclippy::suspicious -Dclippy::style -Dclippy::complexity -Dclippy::perf -Dclippy::nursery -Dclippy::cargo
