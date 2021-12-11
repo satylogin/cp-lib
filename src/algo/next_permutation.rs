@@ -10,12 +10,11 @@ where
     use std::cmp::Ordering;
 
     // find 1st pair (x, y) from back which satisfies x < y
-    let last_ascending = match arr.windows(2).rposition(|w| w[0] < w[1]) {
-        Some(i) => i,
-        None => {
-            arr.reverse();
-            return false;
-        }
+    let last_ascending = if let Some(i) = arr.windows(2).rposition(|w| w[0] < w[1]) {
+        i
+    } else {
+        arr.reverse();
+        return false;
     };
 
     // In the remaining later segment, find the one which is just

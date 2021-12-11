@@ -20,7 +20,7 @@ mod tests {
 
     #[test]
     fn test() {
-        for (x, y, g) in vec![
+        for &(x, y, g) in &[
             (1, 2, 1),
             (0, 1, 1),
             (0, 9, 9),

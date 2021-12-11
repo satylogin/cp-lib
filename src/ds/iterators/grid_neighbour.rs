@@ -10,6 +10,7 @@ pub struct GridNeighbour {
 }
 
 impl GridNeighbour {
+    #[must_use]
     pub fn new(x: usize, y: usize, n: usize, m: usize, diagonal_traversal: bool) -> Self {
         let mut offset = vec![(-1, 0), (1, 0), (0, -1), (0, 1)];
         if diagonal_traversal {
@@ -65,8 +66,8 @@ mod tests {
             let neighbours = GridNeighbour::new(input.0, input.1, N, M, false);
             let mut output = neighbours.collect::<Vec<_>>();
 
-            output.sort();
-            expected.sort();
+            output.sort_unstable();
+            expected.sort_unstable();
             debug_assert_eq!(expected, output, "{}", case_type);
         }
     }
@@ -119,8 +120,8 @@ mod tests {
             let neighbours = GridNeighbour::new(input.0, input.1, N, M, true);
             let mut output = neighbours.collect::<Vec<_>>();
 
-            output.sort();
-            expected.sort();
+            output.sort_unstable();
+            expected.sort_unstable();
             debug_assert_eq!(expected, output, "{}", case_type);
         }
     }

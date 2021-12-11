@@ -69,12 +69,18 @@ impl<'a, T> DoubleEndedIterator for Iter<'a, T> {
     }
 }
 
+impl<T: Ord> Default for MultiSet<T> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<T> MultiSet<T> {
-    pub fn new() -> MultiSet<T>
+    pub fn new() -> Self
     where
         T: Ord,
     {
-        MultiSet {
+        Self {
             freq: BTreeMap::new(),
             len: 0,
         }
@@ -88,8 +94,12 @@ impl<T> MultiSet<T> {
         self.len += 1;
     }
 
-    pub fn len(&self) -> usize {
+    pub const fn len(&self) -> usize {
         self.len
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.freq.is_empty()
     }
 
     pub fn contains<Q: ?Sized>(&self, val: &Q) -> bool
@@ -119,7 +129,7 @@ impl<T> MultiSet<T> {
         false
     }
 
-    pub fn iter<'a>(&'a self) -> Iter<'a, T>
+    pub fn iter(&self) -> Iter<T>
     where
         T: Ord,
     {

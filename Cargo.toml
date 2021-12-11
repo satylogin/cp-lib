@@ -3,6 +3,11 @@ name = "cp-lib"
 version = "0.1.0"
 authors = ["Satyarth Agrahari <satylogin@gmail.com>"]
 edition = "2018"
+description = "Utilities for competitive programming"
+license = "MIT"
+repository = "https://github.com/satylogin/cp-lib"
+keywords = ["cp", "competitive", "programming"]
+categories = ["algorithms", "data-structures", "mathematics", "science"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

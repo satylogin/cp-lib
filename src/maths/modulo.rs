@@ -38,7 +38,7 @@ impl ModMath for Data {
         power %= MOD - 1;
         let mut base = *self;
         base %= MOD;
-        let mut ans: Data = 1;
+        let mut ans: Self = 1;
         while power > 0 {
             if power & 1 != 0 {
                 ans = ans * base % MOD;
@@ -61,6 +61,6 @@ mod tests {
 
     #[test]
     fn mexp() {
-        assert_eq!(568493343, 2.mpow(293322));
+        assert_eq!(568_493_343, 2.mpow(293_322));
     }
 }

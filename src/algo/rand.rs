@@ -2,6 +2,7 @@ fn rand_memory() -> usize {
     Box::into_raw(Box::new("I hope this is a random number")) as usize
 }
 
+#[must_use]
 pub fn rand() -> usize {
     static mut X: usize = 0;
     unsafe {
