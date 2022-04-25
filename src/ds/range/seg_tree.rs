@@ -25,6 +25,9 @@ where
     /// tree.insert(1, 10);
     /// tree.insert(2, 20);
     /// assert_eq!(tree.query(1, 10), 20);
+    ///
+    /// tree.insert_range(3, 6, 10);
+    /// assert_eq!(tree.query(5, 10), 10);
     /// ```
     pub fn new(n: usize, default: T, op: F) -> Self {
         Self {
